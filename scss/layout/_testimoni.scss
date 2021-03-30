@@ -1,0 +1,35 @@
+.testimoni {
+  position: relative;
+  background-color: $secondary-color;
+
+  &__imgdecor {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__content {
+    &-deff {
+      margin: 220px 0;
+      text-align: right;
+
+      .desc {
+        line-height: 1.5;
+        letter-spacing: -0.57px;
+        margin-bottom: 20px;
+        font-weight: weight(medium);
+
+        span {
+          color: $accent-color;
+          font-weight: weight(bold);
+        }
+      }
+
+      .sumber {
+        color: $white-color;
+        font-weight: weight(semiBold);
+        font-style: italic;
+      }
+    }
+  }
+}
