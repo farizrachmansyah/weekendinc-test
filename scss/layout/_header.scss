@@ -1,0 +1,23 @@
+.header {
+  height: 100vh;
+  background-color: $secondary-color;
+
+  &__nav {
+    background-color: $white-color;
+    padding: 17px 24px;
+
+    &-logo {
+      margin-right: 13px;
+    }
+
+    &-greetings {
+      p {
+        font-size: 12px;
+      }
+
+      strong {
+        font-weight: weight(bold);
+      }
+    }
+  }
+}
