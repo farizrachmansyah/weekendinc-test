@@ -1,7 +1,9 @@
 .header {
   flex-direction: column;
+  position: relative;
   height: 100vh;
   background-color: $secondary-color;
+  overflow: hidden;
 
   &__nav {
     background-color: $white-color;
@@ -25,10 +27,32 @@
   &__hero {
     flex-grow: 1;
 
+    &-absurd {
+      position: absolute;
+      width: 110%;
+      height: 70%;
+      border-radius: 0 0 98%;
+      background-color: $primary-color;
+    }
+
     &-content {
       flex-direction: column;
+      position: relative;
+      z-index: 1;
       height: 100%;
       padding: 67px 24px 20px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -10%;
+        width: 110%;
+        height: 32%;
+        background-color: $secondary-color;
+        border-radius: 40% 0 0 0;
+        transform: rotateZ(-8deg);
+      }
 
       &-text {
         color: $white-color;
