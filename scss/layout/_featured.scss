@@ -6,7 +6,9 @@
     color: $white-color;
 
     &-topic {
-      margin-bottom: 67px;
+      &:not(:last-child) {
+        margin-bottom: 67px;
+      }
 
       .title {
         margin-bottom: 30px;
@@ -22,11 +24,15 @@
       &.help-tips {
         .body {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
           grid-gap: 10px;
 
           &__item {
             position: relative;
+
+            &-cover {
+              width: 100%;
+            }
 
             &-content {
               position: absolute;
@@ -65,8 +71,6 @@
   }
 
   &__imagedecor {
-    position: relative;
-    left: 0;
-    bottom: 0;
+    margin-top: 67px;
   }
 }

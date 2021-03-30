@@ -1,0 +1,24 @@
+.footer {
+  background-color: $accent-color;
+
+  .container {
+    padding: 24px;
+    color: $white-color;
+  }
+
+  &__copyright {
+    font-size: 12px;
+
+    span {
+      font-weight: weight(bold);
+    }
+  }
+
+  &__version {
+    padding: 3px 9px;
+    border: 1px solid $white-color;
+    border-radius: 9px;
+    font-size: 10px;
+    font-weight: weight(light);
+  }
+}
