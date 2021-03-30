@@ -1,0 +1,23 @@
+.featured {
+  padding: 162px 0;
+  background-color: $primary-color;
+
+  &__content {
+    color: $white-color;
+
+    &-topic {
+      margin-bottom: 67px;
+
+      .title {
+        margin-bottom: 30px;
+        font-size: 2rem;
+        font-weight: weight(dark);
+      }
+
+      .desc {
+        line-height: 1.5;
+        letter-spacing: -0.57px;
+      }
+    }
+  }
+}

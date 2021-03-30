@@ -9,6 +9,8 @@
   }
 
   &__content {
+    position: relative;
+
     &-deff {
       margin: 220px 0;
       text-align: right;
@@ -30,6 +32,12 @@
         font-weight: weight(semiBold);
         font-style: italic;
       }
+    }
+
+    &-circle {
+      position: absolute;
+      left: 57px;
+      bottom: 93px;
     }
   }
 }
