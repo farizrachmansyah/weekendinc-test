@@ -29,11 +29,17 @@ button,
   text-transform: capitalize;
   font-family: $ff-primary;
   font-weight: weight(regular);
+
+  &:focus,
+  &:active {
+    outline-color: $accent-color;
+  }
 }
 
 // Utilities
 .container {
   max-width: 1170px;
+  margin: 0 auto;
 
   &--p {
     padding: 2rem;
