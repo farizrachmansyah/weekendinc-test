@@ -1,4 +1,5 @@
 .header {
+  flex-direction: column;
   height: 100vh;
   background-color: $secondary-color;
 
@@ -17,6 +18,49 @@
 
       strong {
         font-weight: weight(bold);
+      }
+    }
+  }
+
+  &__hero {
+    flex-grow: 1;
+
+    &-content {
+      flex-direction: column;
+      height: 100%;
+      padding: 67px 24px 20px;
+
+      &-text {
+        color: $white-color;
+
+        .title {
+          text-transform: uppercase;
+          text-align: center;
+          line-height: 51px;
+          font-size: 50px;
+          font-weight: weight(dark);
+          margin-bottom: 20px;
+        }
+
+        .subtitle {
+          text-align: center;
+          font-size: 1rem;
+          font-weight: weight(semiBold);
+          font-style: italic;
+        }
+      }
+
+      &-button {
+        position: relative;
+        width: 231px;
+        margin: 0 auto;
+
+        .btn-go {
+          position: absolute;
+          top: 200px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
     }
   }

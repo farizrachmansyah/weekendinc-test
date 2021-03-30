@@ -15,7 +15,7 @@
     />
   </head>
   <body>
-    <header class="header">
+    <header class="header flex">
       <!-- Navbar -->
       <nav class="header__nav flex flex-ai-c container">
         <div class="header__nav-logo">
@@ -29,12 +29,15 @@
       <!-- Hero -->
       <div class="header__hero">
         <div class="header__hero-absurd"></div>
-        <div class="header__hero-text">
-          <h1 class="title">weekend from home</h1>
-          <h2 class="subtitle">Stay active with a little workout</h2>
-        </div>
-        <div class="header__hero-button">
-          <button class="btn btn-go">let's go</button>
+        <div class="header__hero-content flex flex-jc-sb">
+          <div class="header__hero-content-text">
+            <h1 class="title">weekend from home</h1>
+            <h2 class="subtitle">Stay active with a little workout</h2>
+          </div>
+          <div class="header__hero-content-button flex flex-jc-c">
+            <img src="./dist/assets/bitmap.png" alt="smiling lego" />
+            <button class="btn btn-go">let's go</button>
+          </div>
         </div>
       </div>
     </header>
