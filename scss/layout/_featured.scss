@@ -79,6 +79,9 @@
                 @include breakpoint-up(tablet) {
                   font-size: 1.25rem;
                 }
+                @include breakpoint-up(smDesktop) {
+                  font-size: 1.125rem;
+                }
               }
 
               .btn-arrow {

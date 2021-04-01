@@ -55,6 +55,7 @@
       }
       @include breakpoint-up(smDesktop) {
         width: 99px;
+        margin-right: 26px;
       }
       @include breakpoint-up(mdDesktop) {
         width: 33px;
@@ -71,6 +72,9 @@
         @include breakpoint-up(tablet) {
           font-size: 1.125rem;
         }
+        @include breakpoint-up(smDesktop) {
+          font-size: 1.5rem;
+        }
       }
 
       strong {
@@ -78,6 +82,9 @@
 
         @include breakpoint-up(tablet) {
           font-size: 1.5rem;
+        }
+        @include breakpoint-up(smDesktop) {
+          font-size: 2rem;
         }
       }
     }
@@ -124,6 +131,9 @@
       @include breakpoint-up(smPhone) {
         padding: 67px 24px 20px;
       }
+      @include breakpoint-up(smDesktop) {
+        padding: 157px 24px 20px;
+      }
 
       &-text {
         color: $white-color;
@@ -146,6 +156,9 @@
           @include breakpoint-up(tablet) {
             font-size: 88px;
           }
+          @include breakpoint-up(smDesktop) {
+            font-size: 120px;
+          }
         }
 
         .subtitle {
@@ -159,6 +172,9 @@
           }
           @include breakpoint-up(tablet) {
             font-size: 1.75rem;
+          }
+          @include breakpoint-up(smDesktop) {
+            font-size: 2rem;
           }
         }
       }
@@ -190,6 +206,24 @@
             height: 82px;
             border-radius: 43px;
             top: 300px;
+            font-size: 1.5rem;
+          }
+          @include breakpoint-up(smDesktop) {
+            width: 462px;
+            height: 106px;
+            border-radius: 58px;
+            top: 400px;
+            font-size: 2rem;
+          }
+
+          &:hover {
+            top: 320px;
+            box-shadow: none;
+            background-color: rgba(249, 131, 171, 0.5);
+
+            @include breakpoint-up(smDesktop) {
+              top: 420px;
+            }
           }
         }
       }

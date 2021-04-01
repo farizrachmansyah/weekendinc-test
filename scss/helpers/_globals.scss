@@ -32,6 +32,7 @@ a {
   text-transform: capitalize;
   font-family: $ff-primary;
   font-weight: weight(regular);
+  transition: all 0.3s ease;
 
   &:focus,
   &:active {

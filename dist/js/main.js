@@ -111,6 +111,10 @@ class UI {
         768: {
           items: 2,
           margin: itemMargin
+        },
+        1024: {
+          items: 3,
+          margin: itemMargin
         }
       }
     })
@@ -131,6 +135,8 @@ class UI {
       margin = -126;
     } else if (this.windowWidth < 1024) {
       margin = -90;
+    } else if (this.windowWidth < 1280) {
+      margin = -23;
     }
 
     return margin;
