@@ -1,16 +1,35 @@
-class HelpAndTips {
+class API {
   // Get data from API
-  async getData() {
+  async helpTipsData() {
     try {
       const API_URL = 'https://wknd-take-home-challenge-api.herokuapp.com/help-tips';
 
       const data = await fetch(API_URL);
       let res = await data.json();
 
-      // Take only the data that needed
+      // Only take the data that needed
       res = res.map(item => {
         const { image, title } = item;
         return { image, title };
+      })
+
+      return res;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async testimonialData() {
+    try {
+      const API_URL = 'https://wknd-take-home-challenge-api.herokuapp.com/testimonial'
+
+      const data = await fetch(API_URL);
+      let res = await data.json();
+
+      // Only take the data that needed
+      res = res.map(item => {
+        const { testimony, by } = item;
+        return { testimony, by };
       })
 
       return res;
@@ -23,6 +42,7 @@ class HelpAndTips {
 class UI {
   constructor() {
     this.helpTipsBody = document.querySelector('#helpTipsItems');
+    this.carouselParent = document.querySelector('.testimoni__carousel');
   }
 
   // Create the element markup for each data, gathered them in one place, and push it into they're parent element
@@ -45,8 +65,35 @@ class UI {
     this.helpTipsBody.innerHTML = items;
   }
 
+  displayTestimonial(data) {
+    // create the owl carousel element
+    const owlCarousel = document.createElement('div');
+    owlCarousel.classList.add('owl-carousel');
+
+    // create item element for the carousel
+    let items = '';
+    data.forEach(item => {
+      items += `
+      <div class="item">
+        <div class="item__container">
+          <h2 class="item__container-title">${item.by}</h2>
+          <p class="item__container-desc">${item.testimony}</p>
+        </div>
+      </div>
+      `;
+    });
+
+    // set the items into owl carousel element
+    owlCarousel.innerHTML += items;
+
+    // put the carousel into their parent
+    this.carouselParent.appendChild(owlCarousel);
+    // make the actual owl carousel effect
+    this.makeOwlCarousel();
+  }
+
   // Testimonial Slider
-  cardSlider() {
+  makeOwlCarousel() {
     // get the margin manually for each caraousel item
     // this way is terrible, but i have no choice:')
     const itemMargin = this.getItemMargin();
@@ -90,14 +137,62 @@ class UI {
   }
 }
 
+class EventListener {
+  constructor() {
+    this.letsgoBtn = document.querySelector('.btn-go');
+  }
+
+  // the button at landing page / hero section
+  letsgoButton() {
+    const theBtn = this.letsgoBtn;
+
+    // give the button a click handle
+    theBtn.addEventListener('click', () => {
+      this.smoothScroll('.main', 1000);
+    });
+  }
+
+  // a method to do smooth scrolling effect
+  // honestly i got this function from DevEd
+  smoothScroll(target, duration) {
+    var target = document.querySelector(target);
+    var targetPosition = target.getBoundingClientRect().top;
+    var startPosition = window.pageYOffset;
+    var distance = targetPosition - startPosition;
+    var startTIme = null;
+
+    function animation(currentTime) {
+      if (startTIme === null) startTIme = currentTime;
+      var timeElapsed = currentTime - startTIme;
+      var run = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI();
-  const helpTips = new HelpAndTips();
+  const API_DATA = new API();
+  const events = new EventListener();
 
-  helpTips.getData()
+  API_DATA.helpTipsData()
     .then(data => {
       ui.displayHelpTips(data);
     });
+  API_DATA.testimonialData()
+    .then(data => {
+      ui.displayTestimonial(data);
+    });
 
-  ui.cardSlider();
+  events.letsgoButton();
 })
