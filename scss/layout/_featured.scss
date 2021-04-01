@@ -18,11 +18,19 @@
         margin-bottom: 30px;
         font-size: 2rem;
         font-weight: weight(dark);
+
+        @include breakpoint-up(tablet) {
+          font-size: 3rem;
+        }
       }
 
       .desc {
         line-height: 1.5;
         letter-spacing: -0.57px;
+
+        @include breakpoint-up(tablet) {
+          font-size: 1.5rem;
+        }
       }
 
       &.help-tips {
@@ -30,6 +38,10 @@
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
           grid-gap: 10px;
+
+          @include breakpoint-up(tablet) {
+            grid-gap: 20px;
+          }
 
           &__item {
             position: relative;
@@ -63,6 +75,10 @@
                 letter-spacing: -0.57px;
                 font-size: 1rem;
                 font-weight: weight(bold);
+
+                @include breakpoint-up(tablet) {
+                  font-size: 1.25rem;
+                }
               }
 
               .btn-arrow {
@@ -78,5 +94,10 @@
 
   &__imgdecor {
     margin-top: 67px;
+    width: 253px;
+
+    @include breakpoint-up(tablet) {
+      width: 316px;
+    }
   }
 }
