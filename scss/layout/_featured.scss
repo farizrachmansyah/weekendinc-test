@@ -2,6 +2,10 @@
   padding-top: 162px;
   background-color: $primary-color;
 
+  @include breakpoint-up(tablet) {
+    padding-top: 243px;
+  }
+
   &__content {
     color: $white-color;
 

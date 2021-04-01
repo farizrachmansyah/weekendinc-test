@@ -6,6 +6,11 @@
     position: absolute;
     top: 0;
     right: 0;
+    width: 159px;
+
+    @include breakpoint-up(tablet) {
+      width: 239px;
+    }
   }
 
   &__content {
@@ -15,11 +20,21 @@
       margin: 220px 0;
       text-align: right;
 
+      @include breakpoint-up(tablet) {
+        max-width: 619px;
+        margin: 330px auto;
+      }
+
       .desc {
         line-height: 1.5;
         letter-spacing: -0.57px;
         margin-bottom: 20px;
         font-weight: weight(medium);
+
+        @include breakpoint-up(tablet) {
+          font-size: 1.75rem;
+          margin-bottom: 30px;
+        }
 
         span {
           color: $accent-color;
@@ -31,6 +46,10 @@
         color: $white-color;
         font-weight: weight(semiBold);
         font-style: italic;
+
+        @include breakpoint-up(tablet) {
+          font-size: 1.75rem;
+        }
       }
     }
 
@@ -38,6 +57,13 @@
       position: absolute;
       left: 57px;
       bottom: 93px;
+      width: 89px;
+
+      @include breakpoint-up(tablet) {
+        bottom: 113px;
+        width: 134px;
+        left: 104px;
+      }
     }
   }
 
@@ -52,12 +78,21 @@
       text-shadow: 0 20px 30px rgba(249, 131, 171, 0.7);
       font-size: 2rem;
       font-weight: weight(dark);
+
+      @include breakpoint-up(tablet) {
+        font-size: 3.5rem;
+      }
     }
 
     .item {
       background-color: $white-color;
       width: 247px;
       height: 140px;
+
+      @include breakpoint-up(tablet) {
+        width: 308px;
+        height: 201px;
+      }
 
       &__container {
         padding: 20px;
@@ -66,11 +101,19 @@
           margin-bottom: 20px;
           font-size: 2rem;
           font-weight: weight(dark);
+
+          @include breakpoint-up(tablet) {
+            font-size: 3rem;
+          }
         }
 
         &-desc {
           font-size: 12px;
           letter-spacing: -0.43px;
+
+          @include breakpoint-up(tablet) {
+            font-size: 18px;
+          }
         }
       }
     }

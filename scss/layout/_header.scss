@@ -15,6 +15,10 @@
     height: 183px;
     border-radius: 0 0 200% 80%;
     background-color: $accent-color;
+
+    @include breakpoint-up(tablet) {
+      height: 253px;
+    }
   }
 
   &::after {
@@ -28,6 +32,12 @@
     height: 132px;
     border-radius: 50%;
     background-color: $accent-color;
+
+    @include breakpoint-up(tablet) {
+      left: 14%;
+      width: 264px;
+      height: 264px;
+    }
   }
 
   &__nav {
@@ -37,16 +47,38 @@
     padding: 17px 24px;
 
     &-logo {
+      width: 33px;
       margin-right: 13px;
+
+      @include breakpoint-up(tablet) {
+        width: 66px;
+      }
+      @include breakpoint-up(smDesktop) {
+        width: 99px;
+      }
+      @include breakpoint-up(mdDesktop) {
+        width: 33px;
+      }
+      @include breakpoint-up(lgDesktop) {
+        width: 66px;
+      }
     }
 
     &-greetings {
       p {
         font-size: 12px;
+
+        @include breakpoint-up(tablet) {
+          font-size: 1.125rem;
+        }
       }
 
       strong {
         font-weight: weight(bold);
+
+        @include breakpoint-up(tablet) {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -61,6 +93,10 @@
       border-radius: 0 0 98%;
       background-color: $primary-color;
 
+      @include breakpoint-up(tablet) {
+        height: 76%;
+      }
+
       &::before {
         content: "";
         position: absolute;
@@ -71,6 +107,10 @@
         background-color: $secondary-color;
         border-radius: 40% 0 0 0;
         transform: rotateZ(-8deg);
+
+        @include breakpoint-up(tablet) {
+          transform: rotateZ(-10deg);
+        }
       }
     }
 
@@ -103,6 +143,9 @@
           @include breakpoint-up(mdPhone) {
             font-size: 50px;
           }
+          @include breakpoint-up(tablet) {
+            font-size: 88px;
+          }
         }
 
         .subtitle {
@@ -114,6 +157,9 @@
           @include breakpoint-up(smPhone) {
             font-size: 1rem;
           }
+          @include breakpoint-up(tablet) {
+            font-size: 1.75rem;
+          }
         }
       }
 
@@ -122,11 +168,29 @@
         width: 231px;
         margin: 0 auto;
 
+        img {
+          width: 184px;
+
+          @include breakpoint-up(tablet) {
+            width: 276px;
+          }
+          @include breakpoint-up(smDesktop) {
+            width: 368px;
+          }
+        }
+
         .btn-go {
           position: absolute;
           top: 200px;
           left: 50%;
           transform: translateX(-50%);
+
+          @include breakpoint-up(tablet) {
+            width: 346px;
+            height: 82px;
+            border-radius: 43px;
+            top: 300px;
+          }
         }
       }
     }
