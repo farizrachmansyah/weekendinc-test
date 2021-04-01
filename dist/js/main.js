@@ -41,6 +41,7 @@ class API {
 
 class UI {
   constructor() {
+    this.windowWidth = window.innerWidth;
     this.helpTipsBody = document.querySelector('#helpTipsItems');
     this.carouselParent = document.querySelector('.testimoni__carousel');
   }
@@ -74,7 +75,7 @@ class UI {
     let items = '';
     data.forEach(item => {
       items += `
-      <div class="item put-animation">
+      <div class="item">
         <div class="item__container">
           <h2 class="item__container-title">${item.by}</h2>
           <p class="item__container-desc">${item.testimony}</p>
@@ -118,18 +119,17 @@ class UI {
   }
 
   getItemMargin() {
-    const windowWidth = window.innerWidth;
     let margin = 0;
 
-    if (windowWidth < 360) {
+    if (this.windowWidth < 360) {
       margin = -31;
-    } else if (windowWidth < 375) {
+    } else if (this.windowWidth < 375) {
       margin = -72;
-    } else if (windowWidth < 411) {
+    } else if (this.windowWidth < 411) {
       margin = -86;
-    } else if (windowWidth < 414) {
+    } else if (this.windowWidth < 414) {
       margin = -123;
-    } else if (windowWidth < 768) {
+    } else if (this.windowWidth < 768) {
       margin = -126;
     }
 
