@@ -34,5 +34,8 @@
       padding: 5px 11px;
       border-radius: 11px;
     }
+    @include breakpoint-up(mdDesktop) {
+      border-radius: 12px;
+    }
   }
 }

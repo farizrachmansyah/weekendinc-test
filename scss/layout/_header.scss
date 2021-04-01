@@ -19,6 +19,9 @@
     @include breakpoint-up(tablet) {
       height: 253px;
     }
+    @include breakpoint-up(mdDesktop) {
+      display: none;
+    }
   }
 
   &::after {
@@ -37,6 +40,9 @@
       left: 14%;
       width: 264px;
       height: 264px;
+    }
+    @include breakpoint-up(mdDesktop) {
+      display: none;
     }
   }
 
@@ -59,6 +65,7 @@
       }
       @include breakpoint-up(mdDesktop) {
         width: 33px;
+        margin-right: 13px;
       }
       @include breakpoint-up(lgDesktop) {
         width: 66px;
@@ -75,6 +82,9 @@
         @include breakpoint-up(smDesktop) {
           font-size: 1.5rem;
         }
+        @include breakpoint-up(mdDesktop) {
+          font-size: 12px;
+        }
       }
 
       strong {
@@ -86,12 +96,19 @@
         @include breakpoint-up(smDesktop) {
           font-size: 2rem;
         }
+        @include breakpoint-up(mdDesktop) {
+          font-size: 1rem;
+        }
       }
     }
   }
 
   &__hero {
     flex-grow: 1;
+
+    @include breakpoint-up(mdDesktop) {
+      background: url("../../dist/assets/bg-1.svg");
+    }
 
     &-absurd {
       position: absolute;
@@ -102,6 +119,9 @@
 
       @include breakpoint-up(tablet) {
         height: 76%;
+      }
+      @include breakpoint-up(mdDesktop) {
+        display: none;
       }
 
       &::before {
@@ -118,6 +138,9 @@
         @include breakpoint-up(tablet) {
           transform: rotateZ(-10deg);
         }
+        @include breakpoint-up(mdDesktop) {
+          display: none;
+        }
       }
     }
 
@@ -133,6 +156,10 @@
       }
       @include breakpoint-up(smDesktop) {
         padding: 157px 24px 20px;
+      }
+      @include breakpoint-up(mdDesktop) {
+        padding: 84px 24px 20px;
+        justify-content: flex-start;
       }
 
       &-text {
@@ -159,6 +186,9 @@
           @include breakpoint-up(smDesktop) {
             font-size: 120px;
           }
+          @include breakpoint-up(mdDesktop) {
+            font-size: 62px;
+          }
         }
 
         .subtitle {
@@ -176,6 +206,10 @@
           @include breakpoint-up(smDesktop) {
             font-size: 2rem;
           }
+          @include breakpoint-up(mdDesktop) {
+            font-size: 21px;
+            margin-bottom: 67px;
+          }
         }
       }
 
@@ -192,6 +226,9 @@
           }
           @include breakpoint-up(smDesktop) {
             width: 368px;
+          }
+          @include breakpoint-up(smDesktop) {
+            width: 184px;
           }
         }
 
@@ -215,6 +252,13 @@
             top: 400px;
             font-size: 2rem;
           }
+          @include breakpoint-up(mdDesktop) {
+            width: 231px;
+            height: 58px;
+            border-radius: 29px;
+            top: 200px;
+            font-size: 1rem;
+          }
 
           &:hover {
             top: 320px;
@@ -223,6 +267,9 @@
 
             @include breakpoint-up(smDesktop) {
               top: 420px;
+            }
+            @include breakpoint-up(mdDesktop) {
+              top: 220px;
             }
           }
         }

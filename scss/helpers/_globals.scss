@@ -30,6 +30,7 @@ a {
   background-color: $white-color;
   box-shadow: 0px 20px 30px rgba(249, 131, 171, 0.5);
   text-transform: capitalize;
+  cursor: pointer;
   font-family: $ff-primary;
   font-weight: weight(regular);
   transition: all 0.3s ease;
@@ -44,6 +45,10 @@ a {
 .container {
   max-width: 940px;
   margin: 0 auto;
+
+  @include breakpoint-up(mdDesktop) {
+    max-width: 1170px;
+  }
 
   &--p {
     padding: 2rem;

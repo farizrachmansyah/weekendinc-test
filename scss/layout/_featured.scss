@@ -9,9 +9,17 @@
   &__content {
     color: $white-color;
 
+    @include breakpoint-up(mdDesktop) {
+      padding: 0;
+    }
+
     &-topic {
       &:not(:last-child) {
         margin-bottom: 67px;
+
+        @include breakpoint-up(mdDesktop) {
+          margin-bottom: 100px;
+        }
       }
 
       .title {
@@ -22,6 +30,10 @@
         @include breakpoint-up(tablet) {
           font-size: 3rem;
         }
+        @include breakpoint-up(tablet) {
+          font-size: 2rem;
+          text-align: center;
+        }
       }
 
       .desc {
@@ -31,9 +43,29 @@
         @include breakpoint-up(tablet) {
           font-size: 1.5rem;
         }
+        @include breakpoint-up(mdDesktop) {
+          max-width: 619px;
+          margin: 0 auto;
+          font-size: 18px;
+          letter-spacing: -0.64px;
+          text-align: center;
+        }
       }
 
       &.help-tips {
+        @include breakpoint-up(mdDesktop) {
+          position: relative;
+        }
+
+        .imgdecor {
+          display: none;
+          @include breakpoint-up(mdDesktop) {
+            display: initial;
+            position: absolute;
+            left: 982px;
+          }
+        }
+
         .body {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -41,6 +73,10 @@
 
           @include breakpoint-up(tablet) {
             grid-gap: 20px;
+          }
+          @include breakpoint-up(mdDesktop) {
+            grid-template-columns: repeat(3, 311px);
+            justify-content: center;
           }
 
           &__item {
@@ -101,6 +137,10 @@
 
     @include breakpoint-up(tablet) {
       width: 316px;
+    }
+    @include breakpoint-up(mdDesktop) {
+      width: 244px;
+      margin-top: -122px;
     }
   }
 }
