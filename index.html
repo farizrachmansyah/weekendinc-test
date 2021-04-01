@@ -13,6 +13,27 @@
       href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Owl Carousel Styling -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+    />
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- HEADER SECTION -->
@@ -27,6 +48,7 @@
           </div>
         </div>
       </nav>
+
       <!-- Hero -->
       <div class="header__hero">
         <div class="header__hero-absurd"></div>
@@ -61,8 +83,63 @@
           <img src="./dist/assets/oval.svg" alt="oval" class="testimoni__content-circle" />
         </div>
 
-        <div class="testimoni__results">
-          <!-- Slider -->
+        <!-- <div class="testimoni__carousel">
+          <h2 class="testimoni__carousel-title">Testimonial</h2>
+          <div class="testimoni__carousel-track flex">
+            <div class="card">
+              <div class="card__container">
+                <div class="card__container-title">Blu Kicks</div>
+                <p class="card__container-desc">
+                  Places where you can leverage tools and software to free up time to focus on growing the business.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__container">
+                <div class="card__container-title">Blu Kicks</div>
+                <p class="card__container-desc">
+                  Places where you can leverage tools and software to free up time to focus on growing the business.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__container">
+                <div class="card__container-title">Blu Kicks</div>
+                <p class="card__container-desc">
+                  Places where you can leverage tools and software to free up time to focus on growing the business.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="testimoni__carousel">
+          <h1 class="testimoni__carousel-title">Testimonial</h1>
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <div class="item__container">
+                <h2 class="item__container-title">Blue Kicks</h2>
+                <p class="item__container-desc">
+                  Places where you can leverage tools and software to free up time to focus on growing the business.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__container">
+                <h2 class="item__container-title">Blue Kicks</h2>
+                <p class="item__container-desc">
+                  Places where you can leverage tools and software to free up time to focus on growing the business.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__container">
+                <h2 class="item__container-title">Blue Kicks</h2>
+                <p class="item__container-desc">
+                  Places where you can leverage tools and software to free up time to focus on growing the business.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -103,6 +180,7 @@
       </section>
     </main>
 
+    <!-- FOOTER SECTION -->
     <footer class="footer">
       <div class="container flex flex-ai-c flex-jc-sb">
         <p class="footer__copyright"><span>wknd@</span>2020</p>
@@ -110,6 +188,13 @@
       </div>
     </footer>
 
+    <!-- Owl Carousel -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Main JS -->
     <script src="./dist/js/main.js"></script>
   </body>
 </html>

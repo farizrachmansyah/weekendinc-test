@@ -79,7 +79,11 @@
       position: relative;
       z-index: 1;
       height: 100%;
-      padding: 67px 24px 20px;
+      padding: 57px 24px 20px;
+
+      @include breakpoint-up(smPhone) {
+        padding: 67px 24px 20px;
+      }
 
       &-text {
         color: $white-color;
@@ -88,16 +92,28 @@
           text-transform: uppercase;
           text-align: center;
           line-height: 0.98;
-          font-size: 50px;
+          font-size: 40px;
           font-weight: weight(dark);
-          margin-bottom: 20px;
+          margin-bottom: 10px;
+
+          @include breakpoint-up(smPhone) {
+            font-size: 48px;
+            margin-bottom: 20px;
+          }
+          @include breakpoint-up(mdPhone) {
+            font-size: 50px;
+          }
         }
 
         .subtitle {
           text-align: center;
-          font-size: 1rem;
+          font-size: 0.75rem;
           font-weight: weight(semiBold);
           font-style: italic;
+
+          @include breakpoint-up(smPhone) {
+            font-size: 1rem;
+          }
         }
       }
 

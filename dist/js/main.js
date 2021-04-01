@@ -44,6 +44,50 @@ class UI {
 
     this.helpTipsBody.innerHTML = items;
   }
+
+  // Testimonial Slider
+  cardSlider() {
+    // get the margin manually for each caraousel item
+    // this way is terrible, but i have no choice:')
+    const itemMargin = this.getItemMargin();
+
+    $('.owl-carousel').owlCarousel({
+      loop: false,
+      margin: itemMargin,
+      nav: false,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    })
+  }
+
+  getItemMargin() {
+    const windowWidth = window.innerWidth;
+    let margin = 0;
+
+    if (windowWidth < 360) {
+      margin = -31;
+    } else if (windowWidth < 375) {
+      margin = -72;
+    } else if (windowWidth < 411) {
+      margin = -86;
+    } else if (windowWidth < 414) {
+      margin = -123;
+    } else if (windowWidth < 768) {
+      margin = -126;
+    }
+
+    return margin;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,5 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   helpTips.getData()
     .then(data => {
       ui.displayHelpTips(data);
-    })
+    });
+
+  ui.cardSlider();
 })
