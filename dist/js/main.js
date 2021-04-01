@@ -50,7 +50,7 @@ class UI {
     let items = '';
     data.forEach(item => {
       items += `
-      <div class="body__item">
+      <div class="body__item put-animation">
         <img src=${item.image} alt="image cover" class="body__item-cover" />
         <div class="body__item-content flex flex-ai-c flex-jc-sb">
           <h4 class="name">${item.title}</h4>
@@ -74,7 +74,7 @@ class UI {
     let items = '';
     data.forEach(item => {
       items += `
-      <div class="item">
+      <div class="item put-animation">
         <div class="item__container">
           <h2 class="item__container-title">${item.by}</h2>
           <p class="item__container-desc">${item.testimony}</p>
@@ -107,10 +107,10 @@ class UI {
         0: {
           items: 1
         },
-        600: {
+        768: {
           items: 3
         },
-        1000: {
+        1200: {
           items: 5
         }
       }
@@ -140,6 +140,25 @@ class UI {
 class EventListener {
   constructor() {
     this.letsgoBtn = document.querySelector('.btn-go');
+  }
+
+  // when users scrolling then the elements show up
+  userScroll() {
+    window.addEventListener('scroll', () => {
+      this.scrollAppear();
+    })
+  }
+
+  scrollAppear() {
+    let animatedScrollAppear = document.querySelectorAll('.put-animation');
+    animatedScrollAppear.forEach(element => {
+      let thePosition = element.getBoundingClientRect().top;
+      let screenPosition = window.innerHeight / 1.5;
+
+      if (thePosition < screenPosition) {
+        element.classList.add('show-animation');
+      }
+    });
   }
 
   // the button at landing page / hero section
@@ -195,4 +214,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   events.letsgoButton();
+  events.userScroll();
 })
