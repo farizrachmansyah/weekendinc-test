@@ -70,11 +70,15 @@
       @include breakpoint-up(lgDesktop) {
         width: 66px;
       }
+      @include breakpoint-up(xlDesktop) {
+        margin-right: 26px;
+      }
     }
 
     &-greetings {
       p {
         font-size: 12px;
+        text-transform: capitalize;
 
         @include breakpoint-up(tablet) {
           font-size: 1.125rem;
@@ -84,6 +88,9 @@
         }
         @include breakpoint-up(mdDesktop) {
           font-size: 12px;
+        }
+        @include breakpoint-up(xlDesktop) {
+          font-size: 1.125rem;
         }
       }
 
@@ -99,6 +106,9 @@
         @include breakpoint-up(mdDesktop) {
           font-size: 1rem;
         }
+        @include breakpoint-up(xlDesktop) {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -108,6 +118,9 @@
 
     @include breakpoint-up(mdDesktop) {
       background: url("../../dist/assets/bg-1.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     &-absurd {
@@ -161,6 +174,9 @@
         padding: 84px 24px 20px;
         justify-content: flex-start;
       }
+      @include breakpoint-up(xlDesktop) {
+        padding: 157px 24px 20px;
+      }
 
       &-text {
         color: $white-color;
@@ -189,6 +205,9 @@
           @include breakpoint-up(mdDesktop) {
             font-size: 62px;
           }
+          @include breakpoint-up(xlDesktop) {
+            font-size: 120px;
+          }
         }
 
         .subtitle {
@@ -210,6 +229,10 @@
             font-size: 21px;
             margin-bottom: 67px;
           }
+          @include breakpoint-up(xlDesktop) {
+            font-size: 2rem;
+            margin-bottom: 97px;
+          }
         }
       }
 
@@ -227,8 +250,11 @@
           @include breakpoint-up(smDesktop) {
             width: 368px;
           }
-          @include breakpoint-up(smDesktop) {
+          @include breakpoint-up(mdDesktop) {
             width: 184px;
+          }
+          @include breakpoint-up(xlDesktop) {
+            width: 276px;
           }
         }
 
@@ -259,17 +285,30 @@
             top: 200px;
             font-size: 1rem;
           }
+          @include breakpoint-up(xlDesktop) {
+            width: 346px;
+            height: 82px;
+            border-radius: 43px;
+            top: 300px;
+            font-size: 1.5rem;
+          }
 
           &:hover {
-            top: 320px;
+            top: 220px;
             box-shadow: none;
             background-color: rgba(249, 131, 171, 0.5);
 
+            @include breakpoint-up(tablet) {
+              top: 320px;
+            }
             @include breakpoint-up(smDesktop) {
               top: 420px;
             }
             @include breakpoint-up(mdDesktop) {
               top: 220px;
+            }
+            @include breakpoint-up(xlDesktop) {
+              top: 320px;
             }
           }
         }

@@ -12,6 +12,9 @@
     @include breakpoint-up(mdDesktop) {
       padding: 0;
     }
+    @include breakpoint-up(xlDesktop) {
+      margin-bottom: 4rem;
+    }
 
     &-topic {
       &:not(:last-child) {
@@ -30,7 +33,7 @@
         @include breakpoint-up(tablet) {
           font-size: 3rem;
         }
-        @include breakpoint-up(tablet) {
+        @include breakpoint-up(mdDesktop) {
           font-size: 2rem;
           text-align: center;
         }

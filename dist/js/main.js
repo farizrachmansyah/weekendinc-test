@@ -42,8 +42,29 @@ class API {
 class UI {
   constructor() {
     this.windowWidth = window.innerWidth;
+    this.userGreetings = document.querySelector('.header__nav-greetings p');
     this.helpTipsBody = document.querySelector('#helpTipsItems');
     this.carouselParent = document.querySelector('.testimoni__carousel');
+  }
+
+  displayGreetings() {
+    const theText = this.getUserTimezone();
+    this.userGreetings.innerText = theText;
+  }
+
+  getUserTimezone() {
+    const time = new Date().toLocaleTimeString();
+    const periodIndicator = time.search("M");
+    const timePeriod = time.substring(periodIndicator - 1, periodIndicator + 1);
+    let greetings = '';
+
+    if (timePeriod === 'AM') {
+      greetings = 'good morning';
+    } else {
+      greetings = 'good afternoon';
+    }
+
+    return greetings;
   }
 
   // Create the element markup for each data, gathered them in one place, and push it into they're parent element
@@ -121,7 +142,7 @@ class UI {
           nav: true,
           navText: [
             "<img id='prevCarouselBtn' src='./dist/assets/oval-icon.svg' />",
-            "<img src='./dist/assets/oval-icon.svg' />"
+            "<img id='nextCarouselBtn' src='./dist/assets/oval-icon.svg' />"
           ]
         }
       }
@@ -239,6 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI();
   const API_DATA = new API();
   const events = new EventListener();
+
+  ui.displayGreetings();
 
   API_DATA.helpTipsData()
     .then(data => {
