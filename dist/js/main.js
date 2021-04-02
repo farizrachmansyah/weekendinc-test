@@ -120,12 +120,16 @@ class UI {
           items: 2,
           nav: true,
           navText: [
-            "<img src='./dist/assets/oval-icon-copy.svg' />",
+            "<img id='prevCarouselBtn' src='./dist/assets/oval-icon.svg' />",
             "<img src='./dist/assets/oval-icon.svg' />"
           ]
         }
       }
     })
+
+    // Event handler for changing the style (navText property) of carousel navigation button
+    const events = new EventListener();
+    events.carouselNavBtn();
   }
 
   getItemMargin() {
@@ -212,6 +216,22 @@ class EventListener {
     }
 
     requestAnimationFrame(animation);
+  }
+
+  carouselNavBtn() {
+    // I got the logic but I dont know how to change the arrow navigation style, which is the svg file for the arrow navigation
+    $('.owl-carousel').on('changed.owl.carousel', function (e) {
+      if (e.item.index === 0) {
+        console.log('prev button mati');
+        console.log('next button nyala');
+      } else if (e.item.index > 0 && e.item.index < 3) {
+        console.log('prev button nyala');
+        console.log('next button nyala');
+      } else if (e.item.index === 3) {
+        console.log('prev button nyala');
+        console.log('next button mati');
+      }
+    });
   }
 }
 
