@@ -117,7 +117,12 @@ class UI {
           margin: itemMargin
         },
         1280: {
-          items: 2
+          items: 2,
+          nav: true,
+          navText: [
+            "<img src='./dist/assets/oval-icon-copy.svg' />",
+            "<img src='./dist/assets/oval-icon.svg' />"
+          ]
         }
       }
     })

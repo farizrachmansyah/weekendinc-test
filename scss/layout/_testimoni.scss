@@ -95,6 +95,7 @@
 
     @include breakpoint-up(mdDesktop) {
       max-width: 619px;
+      bottom: -18%;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -113,6 +114,11 @@
         font-size: 2rem;
         text-align: center;
       }
+    }
+
+    // Inside owl carousel element
+    .owl-carousel {
+      position: relative;
     }
 
     .item {
@@ -156,6 +162,24 @@
             font-size: 12px;
           }
         }
+      }
+    }
+
+    // this style only useable when carousel nav are enabled
+    .owl-nav {
+      color: $white-color;
+      font-size: 2.5rem;
+
+      .owl-prev {
+        position: absolute;
+        top: 30%;
+        left: -50px;
+      }
+
+      .owl-next {
+        position: absolute;
+        top: 30%;
+        right: -50px;
       }
     }
   }
